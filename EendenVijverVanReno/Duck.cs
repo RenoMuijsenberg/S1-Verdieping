@@ -19,14 +19,7 @@ namespace EendenVijverVanReno
         public Duck(string duckName, int randomSex)
         {
             name = duckName;
-            if (randomSex == 0)
-            {
-                sex = Sex.Male;
-            }
-            else
-            {
-                sex = Sex.Female;
-            }
+            sex = (Sex)randomSex;
         }
 
         public string GetSex()
