@@ -12,8 +12,10 @@ namespace EendenVijverVanReno
 {
     public partial class Form1 : Form
     {
-        Random rnd = new Random();
-        List<Duck> ducks = new List<Duck>();
+        private Random rnd = new Random();
+        private List<Duck> ducks = new List<Duck>();
+        private List<Frog> frogs = new List<Frog>();
+
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace EendenVijverVanReno
         {
             for (int i = 0; i < 26; i++)
             {
-                ducks.Add(new Duck("Duck " + i ,rnd.Next(0, 2)));
+                ducks.Add(new Duck("Duck " + i , rnd.Next(0, 2)));
                 ltbDucks.Items.Add(ducks[i].ToString());
             }
         }
@@ -31,6 +33,16 @@ namespace EendenVijverVanReno
         private void ltbDucks_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show(ducks[ltbDucks.SelectedIndex].GetSex());
+        }
+
+        private void btnFrog_Click(object sender, EventArgs e)
+        {
+            frogs.Add(new Frog(rnd.Next(0, 2)));
+            ltbFrog.Items.Clear();
+            foreach (var frog in frogs)
+            {
+                ltbFrog.Items.Add(frog.ToString());
+            }
         }
     }
 }
