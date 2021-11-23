@@ -1,0 +1,10 @@
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\bin\Debug\TrafficLight.exe.config
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\bin\Debug\TrafficLight.exe
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\bin\Debug\TrafficLight.pdb
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\obj\Debug\TrafficLight.csproj.AssemblyReference.cache
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\obj\Debug\TrafficLight.Form1.resources
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\obj\Debug\TrafficLight.Properties.Resources.resources
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\obj\Debug\TrafficLight.csproj.GenerateResource.cache
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\obj\Debug\TrafficLight.csproj.CoreCompileInputs.cache
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\obj\Debug\TrafficLight.exe
+D:\Fontys\Software\Verdieping\oefening\TrafficLight\obj\Debug\TrafficLight.pdb

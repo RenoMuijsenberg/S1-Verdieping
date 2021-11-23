@@ -1,0 +1,10 @@
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\bin\Debug\MarimbaAndBass.exe.config
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\bin\Debug\MarimbaAndBass.exe
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\bin\Debug\MarimbaAndBass.pdb
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\obj\Debug\MarimbaAndBass.csproj.AssemblyReference.cache
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\obj\Debug\MarimbaAndBass.Form1.resources
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\obj\Debug\MarimbaAndBass.Properties.Resources.resources
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\obj\Debug\MarimbaAndBass.csproj.GenerateResource.cache
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\obj\Debug\MarimbaAndBass.csproj.CoreCompileInputs.cache
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\obj\Debug\MarimbaAndBass.exe
+D:\Fontys\Software\Verdieping\oefening\MarimbaAndBass\obj\Debug\MarimbaAndBass.pdb
