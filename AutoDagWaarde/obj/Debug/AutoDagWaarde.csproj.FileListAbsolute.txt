@@ -1,0 +1,10 @@
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\bin\Debug\AutoDagWaarde.exe.config
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\bin\Debug\AutoDagWaarde.exe
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\bin\Debug\AutoDagWaarde.pdb
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\obj\Debug\AutoDagWaarde.csproj.AssemblyReference.cache
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\obj\Debug\AutoDagWaarde.Form1.resources
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\obj\Debug\AutoDagWaarde.Properties.Resources.resources
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\obj\Debug\AutoDagWaarde.csproj.GenerateResource.cache
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\obj\Debug\AutoDagWaarde.csproj.CoreCompileInputs.cache
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\obj\Debug\AutoDagWaarde.exe
+D:\Fontys\VerdiepingSoftware\AutoDagWaarde\obj\Debug\AutoDagWaarde.pdb
