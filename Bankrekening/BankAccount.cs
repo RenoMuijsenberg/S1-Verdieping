@@ -8,11 +8,13 @@ namespace Bankrekening
 {
     class BankAccount
     {
+        //Fields
         private int accountNumber;
         private string name;
         private int balance;
         private static int nextFreeAccountNumber = 2001;
 
+        //Constructors
         public BankAccount(string name)
         {
             this.name = name;
@@ -29,6 +31,13 @@ namespace Bankrekening
             nextFreeAccountNumber++;
         }
 
+        //Propertys
+        public int Balance
+        {
+            get { return balance; }
+        }
+
+        //Methods
         public void Withdraw(int amount)
         {
             if (amount > 0)
@@ -79,11 +88,6 @@ namespace Bankrekening
             {
                 System.Windows.Forms.MessageBox.Show("Can not transfer negative amount", "Error");
             }
-        }
-
-        public int Balance
-        {
-            get { return balance; }
         }
     }
 }

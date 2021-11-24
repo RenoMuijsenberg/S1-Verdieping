@@ -39,7 +39,9 @@ namespace Bankrekening
             this.txbTransferLeft = new System.Windows.Forms.TextBox();
             this.lblTransferLeft = new System.Windows.Forms.Label();
             this.grbLeft = new System.Windows.Forms.GroupBox();
+            this.lblBalanceLeft = new System.Windows.Forms.Label();
             this.grbRight = new System.Windows.Forms.GroupBox();
+            this.lblBalanceRight = new System.Windows.Forms.Label();
             this.lblDepostRight = new System.Windows.Forms.Label();
             this.btnTransferRight = new System.Windows.Forms.Button();
             this.txbDepositRight = new System.Windows.Forms.TextBox();
@@ -49,8 +51,6 @@ namespace Bankrekening
             this.lblWithdrawRight = new System.Windows.Forms.Label();
             this.btnWithdrawRight = new System.Windows.Forms.Button();
             this.txbWithdrawRight = new System.Windows.Forms.TextBox();
-            this.lblBalanceLeft = new System.Windows.Forms.Label();
-            this.lblBalanceRight = new System.Windows.Forms.Label();
             this.grbLeft.SuspendLayout();
             this.grbRight.SuspendLayout();
             this.SuspendLayout();
@@ -152,6 +152,15 @@ namespace Bankrekening
             this.grbLeft.TabStop = false;
             this.grbLeft.Text = "Bank account left";
             // 
+            // lblBalanceLeft
+            // 
+            this.lblBalanceLeft.AutoSize = true;
+            this.lblBalanceLeft.Location = new System.Drawing.Point(15, 115);
+            this.lblBalanceLeft.Name = "lblBalanceLeft";
+            this.lblBalanceLeft.Size = new System.Drawing.Size(16, 17);
+            this.lblBalanceLeft.TabIndex = 9;
+            this.lblBalanceLeft.Text = "0";
+            // 
             // grbRight
             // 
             this.grbRight.Controls.Add(this.lblBalanceRight);
@@ -170,6 +179,15 @@ namespace Bankrekening
             this.grbRight.TabIndex = 10;
             this.grbRight.TabStop = false;
             this.grbRight.Text = "Bank account right";
+            // 
+            // lblBalanceRight
+            // 
+            this.lblBalanceRight.AutoSize = true;
+            this.lblBalanceRight.Location = new System.Drawing.Point(12, 115);
+            this.lblBalanceRight.Name = "lblBalanceRight";
+            this.lblBalanceRight.Size = new System.Drawing.Size(16, 17);
+            this.lblBalanceRight.TabIndex = 10;
+            this.lblBalanceRight.Text = "0";
             // 
             // lblDepostRight
             // 
@@ -249,29 +267,11 @@ namespace Bankrekening
             this.txbWithdrawRight.Size = new System.Drawing.Size(100, 22);
             this.txbWithdrawRight.TabIndex = 4;
             // 
-            // lblBalanceLeft
-            // 
-            this.lblBalanceLeft.AutoSize = true;
-            this.lblBalanceLeft.Location = new System.Drawing.Point(15, 115);
-            this.lblBalanceLeft.Name = "lblBalanceLeft";
-            this.lblBalanceLeft.Size = new System.Drawing.Size(16, 17);
-            this.lblBalanceLeft.TabIndex = 9;
-            this.lblBalanceLeft.Text = "0";
-            // 
-            // lblBalanceRight
-            // 
-            this.lblBalanceRight.AutoSize = true;
-            this.lblBalanceRight.Location = new System.Drawing.Point(12, 115);
-            this.lblBalanceRight.Name = "lblBalanceRight";
-            this.lblBalanceRight.Size = new System.Drawing.Size(16, 17);
-            this.lblBalanceRight.TabIndex = 10;
-            this.lblBalanceRight.Text = "0";
-            // 
             // Bank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 160);
+            this.ClientSize = new System.Drawing.Size(722, 157);
             this.Controls.Add(this.grbRight);
             this.Controls.Add(this.grbLeft);
             this.Name = "Bank";
