@@ -81,9 +81,9 @@ namespace Bankrekening
             }
         }
 
-        public int GetBalance()
+        public int Balance
         {
-            return balance;
+            get { return balance; }
         }
     }
 }

@@ -30,13 +30,33 @@ namespace EendenVijverVanReno
             nextRandomAttack = rnd.Next(10, 25);
             for (int i = 0; i < 26; i++)
             {
-                ducks.Add(new Duck("Duck " + i , rnd.Next(0, 2)));
+                int gender = rnd.Next(0, 2);
+                if (gender == 0)
+                {
+                    ducks.Add(new Duck("Duck " + i, Duck.duckGender.Male));
+                }
+                else
+                {
+                    ducks.Add(new Duck("Duck " + i, Duck.duckGender.Female));
+                }
                 ltbDucks.Items.Add(ducks[i].ToString());
             }
 
             for (int i = 0; i < 5; i++)
             {
-                storks.Add(new Stork(rnd.Next(0, 3)));
+                int gender = rnd.Next(0, 3);
+                if (gender == 0)
+                {
+                    storks.Add(new Stork(Stork.storkGender.Male));
+                }
+                else if (gender == 1)
+                {
+                    storks.Add(new Stork(Stork.storkGender.Female));
+                }
+                else
+                {
+                    storks.Add(new Stork(Stork.storkGender.Other));
+                }
                 ltbStorks.Items.Add(storks[i].ToString());
             }
         }
@@ -45,13 +65,26 @@ namespace EendenVijverVanReno
         {
             if (ltbDucks.SelectedIndex != -1)
             {
-                MessageBox.Show(ducks[ltbDucks.SelectedIndex].GetSex());
+                MessageBox.Show(ducks[ltbDucks.SelectedIndex].Sex.ToString());
             }
         }
 
         private void btnFrog_Click(object sender, EventArgs e)
         {
-            frogs.Add(new Frog(rnd.Next(0, 2)));
+            int gender = rnd.Next(0, 3);
+
+            if (gender == 0)
+            {
+                frogs.Add(new Frog(Frog.frogGender.Male));
+            }
+            else if (gender == 1)
+            {
+                frogs.Add(new Frog(Frog.frogGender.Female));
+            }
+            else
+            {
+                frogs.Add(new Frog(Frog.frogGender.Other));
+            }
             UpdateFrogsListBox();
         }
 
@@ -66,16 +99,16 @@ namespace EendenVijverVanReno
                     int randomStork = rnd.Next(0, storks.Count -1);
                     int randomFrog = rnd.Next(0, frogs.Count - 1);
 
-                    if (storks[randomStork].GetSex() == frogs[randomFrog].GetSex())
+                    if (storks[randomStork].Sex.ToString() == frogs[randomFrog].FrogGender.ToString())
                     {
                         storks[randomStork].AttackFrog(frogs[randomFrog]);
-                        MessageBox.Show(storks[randomStork].ToString() + "(" + storks[randomStork].GetSex() + ") killed " + frogs[randomFrog] + "(" + frogs[randomFrog].GetSex() + ")", "Success");
+                        MessageBox.Show(storks[randomStork].ToString() + "(" + storks[randomStork].Sex.ToString() + ") killed " + frogs[randomFrog] + "(" + frogs[randomFrog].FrogGender.ToString() + ")", "Success");
                         frogs.Remove(frogs[randomFrog]);
                         UpdateFrogsListBox();
                     }
                     else
                     {
-                        MessageBox.Show(storks[randomStork].ToString() + "(" + storks[randomStork].GetSex() + ") wanted to attack " + frogs[randomFrog] + "(" + frogs[randomFrog].GetSex() + ")" + "\n" + "But failed because of gender" , "Error");
+                        MessageBox.Show(storks[randomStork].ToString() + "(" + storks[randomStork].Sex.ToString() + ") wanted to attack " + frogs[randomFrog] + "(" + frogs[randomFrog].FrogGender.ToString() + ")" + "\n" + "But failed because of gender" , "Error");
                     }
                 }
                 else
@@ -100,9 +133,9 @@ namespace EendenVijverVanReno
             if (ltbStorks.SelectedIndex != -1)
             {
                 ltbKills.Items.Clear();
-                if (storks[ltbStorks.SelectedIndex].GetKilledFrogs().Count != 0)
+                if (storks[ltbStorks.SelectedIndex].EatenFrogs.Count != 0)
                 {
-                    foreach (var killedFrog in storks[ltbStorks.SelectedIndex].GetKilledFrogs())
+                    foreach (var killedFrog in storks[ltbStorks.SelectedIndex].EatenFrogs)
                     {
                         ltbKills.Items.Add(killedFrog.ToString());
                     }

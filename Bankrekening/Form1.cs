@@ -26,7 +26,7 @@ namespace Bankrekening
             if (int.TryParse(txbDepositLeft.Text, out int number))
             {
                 bankAccountLeft.Deposit(number);
-                lblBalanceLeft.Text = bankAccountLeft.GetBalance().ToString("C");
+                lblBalanceLeft.Text = bankAccountLeft.Balance.ToString("C");
             }
             else
             {
@@ -40,7 +40,7 @@ namespace Bankrekening
             if (int.TryParse(txbWithdrawLeft.Text, out int number))
             {
                 bankAccountLeft.Withdraw(number);
-                lblBalanceLeft.Text = bankAccountLeft.GetBalance().ToString("C");
+                lblBalanceLeft.Text = bankAccountLeft.Balance.ToString("C");
             }
             else
             {
@@ -54,8 +54,8 @@ namespace Bankrekening
             if (int.TryParse(txbTransferLeft.Text, out int number))
             {
                 bankAccountLeft.Transfer(bankAccountRight, number);
-                lblBalanceLeft.Text = bankAccountLeft.GetBalance().ToString("C");
-                lblBalanceRight.Text = bankAccountRight.GetBalance().ToString("C");
+                lblBalanceLeft.Text = bankAccountLeft.Balance.ToString("C");
+                lblBalanceRight.Text = bankAccountRight.Balance.ToString("C");
             }
             else
             {
@@ -69,7 +69,7 @@ namespace Bankrekening
             if (int.TryParse(txbDepositRight.Text, out int number))
             {
                 bankAccountRight.Deposit(number);
-                lblBalanceRight.Text = bankAccountRight.GetBalance().ToString("C");
+                lblBalanceRight.Text = bankAccountRight.Balance.ToString("C");
             }
             else
             {
@@ -83,7 +83,7 @@ namespace Bankrekening
             if (int.TryParse(txbWithdrawRight.Text, out int number))
             {
                 bankAccountRight.Withdraw(number);
-                lblBalanceRight.Text = bankAccountRight.GetBalance().ToString("C");
+                lblBalanceRight.Text = bankAccountRight.Balance.ToString("C");
             }
             else
             {
@@ -97,8 +97,8 @@ namespace Bankrekening
             if (int.TryParse(txbTransferRight.Text, out int number))
             {
                 bankAccountRight.Transfer(bankAccountLeft, number);
-                lblBalanceLeft.Text = bankAccountLeft.GetBalance().ToString("C");
-                lblBalanceRight.Text = bankAccountRight.GetBalance().ToString("C");
+                lblBalanceLeft.Text = bankAccountLeft.Balance.ToString("C");
+                lblBalanceRight.Text = bankAccountRight.Balance.ToString("C");
             }
             else
             {

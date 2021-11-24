@@ -8,40 +8,44 @@ namespace EendenVijverVanReno
 {
     class Stork
     {
-        int storkId;
-        string name;
-        private Sex sex;
+        //Fields
+        private int storkId;
+        private string name;
+        private storkGender sex;
         private static int nextStorkId = 0;
         private List<Frog> eatenFrogs = new List<Frog>();
         
-        private enum Sex
+        public enum storkGender
         {
             Male,
             Female,
             Other
         }
 
-        public Stork(int randomSex)
+        //Constructor
+        public Stork(storkGender Sex)
         {
             storkId = nextStorkId;
             name = "Stork " + storkId;
-            sex = (Sex)randomSex;
+            sex = Sex;
             nextStorkId++;
         }
 
+        //Propertys
+        public storkGender Sex
+        {
+            get { return sex; }
+        }
+
+        public List<Frog> EatenFrogs
+        {
+            get { return eatenFrogs; }
+        }
+
+        //Methods
         public void AttackFrog(Frog eatenFrog)
         {
             eatenFrogs.Add(eatenFrog);
-        }
-
-        public string GetSex()
-        {
-            return sex.ToString();
-        }
-
-        public List<Frog> GetKilledFrogs()
-        {
-            return eatenFrogs;
         }
 
         public override string ToString()

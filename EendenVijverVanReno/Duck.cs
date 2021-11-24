@@ -8,23 +8,26 @@ namespace EendenVijverVanReno
 {
     class Duck
     {
-        string name;
-        private Sex sex;
-        private enum Sex
+        //Fields
+        private string name;
+        private duckGender sex;
+        public enum duckGender
         {
             Male,
             Female
         }
 
-        public Duck(string duckName, int randomSex)
+        //Constructor
+        public Duck(string Name, duckGender Sex)
         {
-            name = duckName;
-            sex = (Sex)randomSex;
+            name = Name;
+            sex = Sex;
         }
 
-        public string GetSex()
+        //Property
+        public duckGender Sex
         {
-            return sex.ToString();
+            get { return sex; }
         }
 
         public override string ToString()

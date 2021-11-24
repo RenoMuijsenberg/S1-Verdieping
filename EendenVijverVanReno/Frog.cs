@@ -8,29 +8,31 @@ namespace EendenVijverVanReno
 {
     class Frog
     {
-        int frogId;
-        string name;
-        private Sex sex;
-        static int nextFrogId = 0;
-
-        private enum Sex
+        //Fields
+        private int frogId;
+        private string name;
+        private frogGender sex;
+        private static int nextFrogId = 0;
+        public enum frogGender
         {
             Male,
             Female,
             Other
         }
 
-        public Frog(int randomSex)
+        //Constructor
+        public Frog(frogGender Sex)
         {
             frogId = nextFrogId;
             name = "Frog " + frogId;
-            sex = (Sex)randomSex;
+            sex = Sex;
             nextFrogId++;
         }
 
-        public string GetSex()
+        //Property
+        public frogGender FrogGender
         {
-            return sex.ToString();
+            get { return sex; }
         }
 
         public override string ToString()

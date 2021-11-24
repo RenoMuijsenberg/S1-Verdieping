@@ -1,0 +1,10 @@
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\bin\Debug\EendenVijverVanReno.exe.config
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\bin\Debug\EendenVijverVanReno.exe
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\bin\Debug\EendenVijverVanReno.pdb
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\obj\Debug\EendenVijverVanReno.csproj.AssemblyReference.cache
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\obj\Debug\EendenVijverVanReno.Form1.resources
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\obj\Debug\EendenVijverVanReno.Properties.Resources.resources
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\obj\Debug\EendenVijverVanReno.csproj.GenerateResource.cache
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\obj\Debug\EendenVijverVanReno.csproj.CoreCompileInputs.cache
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\obj\Debug\EendenVijverVanReno.exe
+D:\Fontys\VerdiepingSoftware\EendenVijverVanReno\obj\Debug\EendenVijverVanReno.pdb
