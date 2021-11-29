@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DateReminder;
 using DateReminder.Models;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace DateReminder.Controllers
 {
@@ -67,6 +68,23 @@ namespace DateReminder.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        //PATCH: api/users/
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> UpdatePassword(int id, [FromBody] JsonPatchDocument patch)
+        {
+            var userModel = await _context.Users.FindAsync(id);
+
+            if (userModel == null)
+            {
+                return NotFound();
+            }
+
+            patch.ApplyTo(userModel);
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
 
         private bool UserModelExists(int id)

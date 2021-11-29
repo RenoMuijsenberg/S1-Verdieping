@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BMsQsChdtXd3WH4kb2N5cfS4HEZVJ6LcWd9EEa2NWdGRWBkSt8pHB4fCgex82yPHNfX++adipErCkk162ML7eg==",
+  "dgSpecHash": "iwfZsidSfoP64rYbSVv+6ygB0Sfokn7IhlQNXyeadS5SB4TxGUq1g2pyEsBPutIDVnIINhM6nFT8ByqCRUaAkg==",
   "success": true,
   "projectFilePath": "D:\\School\\Verdieping Software\\Oefeningen\\DateReminder\\DateReminder\\DateReminder.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\renom\\.nuget\\packages\\k4os.compression.lz4.streams\\1.2.6\\k4os.compression.lz4.streams.1.2.6.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\renom\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.12\\microsoft.aspnetcore.jsonpatch.5.0.12.nupkg.sha512",
+    "C:\\Users\\renom\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.12\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.12.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
@@ -62,7 +64,8 @@
     "C:\\Users\\renom\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\mysql.data\\8.0.27\\mysql.data.8.0.27.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\mysql.entityframeworkcore\\5.0.8\\mysql.entityframeworkcore.5.0.8.nupkg.sha512",
-    "C:\\Users\\renom\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\renom\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\renom\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
