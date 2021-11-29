@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HAKixHZbTcL6GulD9U2GmQm6qH3qQ0yhsZsRiIBnEKtJulH8kO+l6jPGxwNDWbmz19C/MjnKEsw4rev1PeOL5Q==",
+  "dgSpecHash": "BMsQsChdtXd3WH4kb2N5cfS4HEZVJ6LcWd9EEa2NWdGRWBkSt8pHB4fCgex82yPHNfX++adipErCkk162ML7eg==",
   "success": true,
-  "projectFilePath": "D:\\Fontys\\VerdiepingSoftware\\Oefeningen\\DateReminder\\DateReminder\\DateReminder.csproj",
+  "projectFilePath": "D:\\School\\Verdieping Software\\Oefeningen\\DateReminder\\DateReminder\\DateReminder.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\renom\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",
@@ -141,8 +141,7 @@
     "C:\\Users\\renom\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\renom\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\renom\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\renom\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\renom\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

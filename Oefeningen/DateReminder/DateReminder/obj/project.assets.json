@@ -7633,20 +7633,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\renom\\.nuget\\packages\\": {}
+    "C:\\Users\\renom\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Fontys\\VerdiepingSoftware\\Oefeningen\\DateReminder\\DateReminder\\DateReminder.csproj",
+      "projectUniqueName": "D:\\School\\Verdieping Software\\Oefeningen\\DateReminder\\DateReminder\\DateReminder.csproj",
       "projectName": "DateReminder",
-      "projectPath": "D:\\Fontys\\VerdiepingSoftware\\Oefeningen\\DateReminder\\DateReminder\\DateReminder.csproj",
+      "projectPath": "D:\\School\\Verdieping Software\\Oefeningen\\DateReminder\\DateReminder\\DateReminder.csproj",
       "packagesPath": "C:\\Users\\renom\\.nuget\\packages\\",
-      "outputPath": "D:\\Fontys\\VerdiepingSoftware\\Oefeningen\\DateReminder\\DateReminder\\obj\\",
+      "outputPath": "D:\\School\\Verdieping Software\\Oefeningen\\DateReminder\\DateReminder\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
         "C:\\Users\\renom\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7714,12 +7719,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.12, 5.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7728,7 +7727,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

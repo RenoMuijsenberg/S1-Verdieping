@@ -21,14 +21,14 @@ namespace DateReminder.Controllers
             _context = context;
         }
 
-        // GET: api/UserModels
+        // GET: api/users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserModel>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
-        // GET: api/UserModels/5
+        // GET: api/users/username
         [HttpGet("{slug}")]
         public async Task<ActionResult<UserModel>> GetUserModel(string slug)
         {
@@ -42,49 +42,18 @@ namespace DateReminder.Controllers
             return userModel;
         }
 
-        // PUT: api/UserModels/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserModel(int id, UserModel userModel)
-        {
-            if (id != userModel.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(userModel).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserModelExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/UserModels
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // POST: api/users
         [HttpPost]
+        [ActionName(nameof(GetUserModel))]
         public async Task<ActionResult<UserModel>> PostUserModel(UserModel userModel)
         {
             _context.Users.Add(userModel);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUserModel", new { id = userModel.Id }, userModel);
+            return CreatedAtAction(nameof(GetUserModel), new { id = userModel.Id }, userModel);
         }
 
-        // DELETE: api/UserModels/5
+        // DELETE: api/users/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserModel(int id)
         {

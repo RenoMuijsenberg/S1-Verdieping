@@ -11,5 +11,8 @@ namespace DateReminder
         }
 
         public DbSet<UserModel> Users { get; set; }
+
+        public DbSet<ListModel> Lists { get; set; }
+        public DbSet<ProductModel> Products { get; set; }
     }
 }
