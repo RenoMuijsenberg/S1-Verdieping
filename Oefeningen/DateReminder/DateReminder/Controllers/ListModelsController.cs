@@ -10,7 +10,7 @@ using DateReminder.Models;
 
 namespace DateReminder.Controllers
 {
-    [Route("api/list")]
+    [Route("api/lists")]
     [ApiController]
     public class ListModelsController : ControllerBase
     {
@@ -100,19 +100,16 @@ namespace DateReminder.Controllers
         }
 
         //Get: api/lists/{userid}
-        [HttpGet("s/{userId}")]
-        public async Task<ActionResult> GetUserList(int userId)
+        [HttpGet("user/{userId}")]
+        public async Task<ActionResult<IEnumerable<ListModel>>> GetUserList(int userId)
         {
-            var listModel = await _context.Lists.FindAsync(userId);
+            var listModel = await _context.Lists.Where(x => x.UserId == userId).ToListAsync();
             if (listModel == null)
             {
                 return NotFound();
             }
 
-            _context.Lists.Remove(listModel);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return listModel;
         }
 
         private bool ListModelExists(int id)
