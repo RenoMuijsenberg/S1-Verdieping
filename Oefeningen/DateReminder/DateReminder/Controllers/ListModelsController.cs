@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DateReminder;
 using DateReminder.Models;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace DateReminder.Controllers
 {
@@ -88,6 +89,7 @@ namespace DateReminder.Controllers
         public async Task<IActionResult> DeleteListModel(int id)
         {
             var listModel = await _context.Lists.FindAsync(id);
+
             if (listModel == null)
             {
                 return NotFound();
@@ -101,15 +103,33 @@ namespace DateReminder.Controllers
 
         //Get: api/lists/{userid}
         [HttpGet("user/{userId}")]
-        public async Task<ActionResult<IEnumerable<ListModel>>> GetUserList(int userId)
+        public async Task<ActionResult<IEnumerable<ListModel>>> GetUserLists(int userId)
         {
             var listModel = await _context.Lists.Where(x => x.UserId == userId).ToListAsync();
+
             if (listModel == null)
             {
                 return NotFound();
             }
 
             return listModel;
+        }
+
+        //PATCH: api/lists/{userid}
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> UpdatePassword(int id, [FromBody] JsonPatchDocument patch)
+        {
+            var listModel = await _context.Lists.FindAsync(id);
+
+            if (listModel == null)
+            {
+                return NotFound();
+            }
+
+            patch.ApplyTo(listModel);
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
 
         private bool ListModelExists(int id)

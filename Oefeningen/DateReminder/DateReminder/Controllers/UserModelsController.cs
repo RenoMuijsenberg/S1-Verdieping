@@ -29,6 +29,20 @@ namespace DateReminder.Controllers
             return await _context.Users.ToListAsync();
         }
 
+        // GET: api/users/id
+        [HttpGet("id/{id}")]
+        public async Task<ActionResult<UserModel>> GetUserModel(int id)
+        {
+            var userModel = await _context.Users.FindAsync(id);
+
+            if (userModel == null)
+            {
+                return NotFound();
+            }
+
+            return userModel;
+        }
+
         // GET: api/users/username
         [HttpGet("{slug}")]
         public async Task<ActionResult<UserModel>> GetUserModel(string slug)

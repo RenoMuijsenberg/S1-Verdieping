@@ -100,6 +100,20 @@ namespace DateReminder.Controllers
             return NoContent();
         }
 
+        //Get: api/products/list/{listId}
+        [HttpGet("list/{listId}")]
+        public async Task<ActionResult<IEnumerable<ProductModel>>> GetListProducts(int listId)
+        {
+            var productModel = await _context.Products.Where(x => x.ListId == listId).ToListAsync();
+
+            if (productModel == null)
+            {
+                return NotFound();
+            }
+
+            return productModel;
+        }
+
         private bool ProductModelExists(int id)
         {
             return _context.Products.Any(e => e.Id == id);
