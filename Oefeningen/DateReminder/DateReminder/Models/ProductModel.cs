@@ -7,6 +7,9 @@ namespace DateReminder.Models
         //Id of product
         [Key]
         public int Id { get; set; }
+        
+        //Id of list
+        public int ListId { get; set; }
 
         //Name of product
         [Required(ErrorMessage = "Product name is required")]

@@ -13,6 +13,7 @@ namespace DateReminder.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     ListName = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
@@ -26,6 +27,7 @@ namespace DateReminder.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    ListId = table.Column<int>(type: "int", nullable: false),
                     ProductName = table.Column<string>(type: "text", nullable: false),
                     ProductImage = table.Column<string>(type: "text", nullable: true),
                     ProductDate = table.Column<string>(type: "text", nullable: false)

@@ -10,7 +10,7 @@ using DateReminder.Models;
 
 namespace DateReminder.Controllers
 {
-    [Route("api/lists")]
+    [Route("api/list")]
     [ApiController]
     public class ListModelsController : ControllerBase
     {
@@ -88,6 +88,22 @@ namespace DateReminder.Controllers
         public async Task<IActionResult> DeleteListModel(int id)
         {
             var listModel = await _context.Lists.FindAsync(id);
+            if (listModel == null)
+            {
+                return NotFound();
+            }
+
+            _context.Lists.Remove(listModel);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        //Get: api/lists/{userid}
+        [HttpGet("s/{userId}")]
+        public async Task<ActionResult> GetUserList(int userId)
+        {
+            var listModel = await _context.Lists.FindAsync(userId);
             if (listModel == null)
             {
                 return NotFound();

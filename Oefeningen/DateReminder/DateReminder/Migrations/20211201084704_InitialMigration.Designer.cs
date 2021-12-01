@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DateReminder.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211129100524_InitialMigration")]
+    [Migration("20211201084704_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,6 +28,9 @@ namespace DateReminder.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Lists");
@@ -37,6 +40,9 @@ namespace DateReminder.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ListId")
                         .HasColumnType("int");
 
                     b.Property<string>("ProductDate")
