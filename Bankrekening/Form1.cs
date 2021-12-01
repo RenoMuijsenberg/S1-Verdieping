@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace Bankrekening
 {
-    public partial class Bank : Form
+    public partial class BankAccountForm : Form
     {
         private BankAccount bankAccountLeft;
         private BankAccount bankAccountRight;
-        public Bank()
+        public BankAccountForm()
         {
             InitializeComponent();
             bankAccountLeft = new BankAccount("Duck, Dagobert");
-            bankAccountRight = new BankAccount("Gans, Gijs");
+            bankAccountRight = new BankAccount("Gans, Gijs", 200);
         }
 
         private void btnDepositLeft_Click(object sender, EventArgs e)
@@ -105,6 +105,12 @@ namespace Bankrekening
                 MessageBox.Show("Amount is not a number", "Error");
             }
             txbTransferRight.Text = "";
+        }
+
+        private void BankAccountForm_Load(object sender, EventArgs e)
+        {
+            lblBalanceLeft.Text = bankAccountLeft.Balance.ToString("C");
+            lblBalanceRight.Text = bankAccountRight.Balance.ToString("C");
         }
     }
 }

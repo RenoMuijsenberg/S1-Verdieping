@@ -288,3 +288,7 @@ D:\School\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net
 D:\School\Verdieping Software\Oefeningen\DateReminder\DateReminder\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\School\Verdieping Software\Oefeningen\DateReminder\DateReminder\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\School\Verdieping Software\Oefeningen\DateReminder\DateReminder\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\Fontys\VerdiepingSoftware\Oefeningen\DateReminder\DateReminder\bin\Debug\net5.0\DateReminder.StaticWebAssets.xml
+D:\Fontys\VerdiepingSoftware\Oefeningen\DateReminder\DateReminder\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Fontys\VerdiepingSoftware\Oefeningen\DateReminder\DateReminder\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Fontys\VerdiepingSoftware\Oefeningen\DateReminder\DateReminder\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

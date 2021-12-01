@@ -1,7 +1,7 @@
 ﻿
 namespace Bankrekening
 {
-    partial class Bank
+    partial class BankAccountForm
     {
         /// <summary>
         /// Required designer variable.
@@ -267,15 +267,16 @@ namespace Bankrekening
             this.txbWithdrawRight.Size = new System.Drawing.Size(100, 22);
             this.txbWithdrawRight.TabIndex = 4;
             // 
-            // Bank
+            // BankAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 157);
             this.Controls.Add(this.grbRight);
             this.Controls.Add(this.grbLeft);
-            this.Name = "Bank";
-            this.Text = "Bank";
+            this.Name = "BankAccountForm";
+            this.Text = "BankAccountForm";
+            this.Load += new System.EventHandler(this.BankAccountForm_Load);
             this.grbLeft.ResumeLayout(false);
             this.grbLeft.PerformLayout();
             this.grbRight.ResumeLayout(false);

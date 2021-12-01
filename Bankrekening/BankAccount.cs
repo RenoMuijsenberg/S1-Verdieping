@@ -11,22 +11,21 @@ namespace Bankrekening
         //Fields
         private int accountNumber;
         private string name;
-        private int balance;
+        private int balance = 0;
         private static int nextFreeAccountNumber = 2001;
 
         //Constructors
-        public BankAccount(string name)
+        public BankAccount(string Name)
         {
-            this.name = name;
-            balance = 0;
+            name = Name;
             accountNumber = nextFreeAccountNumber;
             nextFreeAccountNumber++;
         }
 
-        public BankAccount(string name, int amount)
+        public BankAccount(string Name, int Amount)
         {
-            this.name = name;
-            balance = amount;
+            name = Name;
+            balance = Amount;
             accountNumber = nextFreeAccountNumber;
             nextFreeAccountNumber++;
         }
@@ -38,13 +37,13 @@ namespace Bankrekening
         }
 
         //Methods
-        public void Withdraw(int amount)
+        public void Withdraw(int Amount)
         {
-            if (amount > 0)
+            if (Amount > 0)
             {
-                if (balance - amount >= 0)
+                if (balance - Amount >= 0)
                 {
-                    this.balance -= amount;
+                    balance -= Amount;
                 }
                 else
                 {
@@ -57,11 +56,11 @@ namespace Bankrekening
             }
         }
 
-        public void Deposit(int amount)
+        public void Deposit(int Amount)
         {
-            if (amount > 0)
+            if (Amount > 0)
             {
-                this.balance += amount;
+                balance += Amount;
             }
             else
             {
@@ -69,15 +68,15 @@ namespace Bankrekening
             }
         }
 
-        public void Transfer(BankAccount otherBankAccount, int amount)
+        public void Transfer(BankAccount OtherBankAccount, int Amount)
         {
 
-            if (amount > 0)
+            if (Amount > 0)
             {
-                if (balance - amount >= 0)
+                if (balance - Amount >= 0)
                 {
-                    this.balance -= amount;
-                    otherBankAccount.balance = otherBankAccount.balance + amount;
+                    balance -= Amount;
+                    OtherBankAccount.balance = OtherBankAccount.balance + Amount;
                 }
                 else
                 {

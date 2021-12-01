@@ -42,7 +42,7 @@ namespace AutoDagWaarde
                 {
                     if (cars[i].Kilometer < 10000)
                     {
-                        cars[i].DriveKilometer(rnd.Next(1000, 2000));
+                        cars[i].RijdKilometers(rnd.Next(1000, 2000));
                     }
                 }
             }

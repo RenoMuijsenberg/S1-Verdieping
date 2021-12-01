@@ -33,7 +33,7 @@ namespace DateReminder.Controllers
         [HttpGet("{slug}")]
         public async Task<ActionResult<UserModel>> GetUserModel(string slug)
         {
-            var userModel = await _context.Users.FirstOrDefaultAsync(user => user.UserName == slug);
+            var userModel = await _context.Users.FirstAsync(user => user.UserName == slug);
 
             if (userModel == null)
             {
@@ -48,6 +48,13 @@ namespace DateReminder.Controllers
         [ActionName(nameof(GetUserModel))]
         public async Task<ActionResult<UserModel>> PostUserModel(UserModel userModel)
         {
+            var checkUsername = await _context.Users.FirstOrDefaultAsync(user => user.UserName == userModel.UserName);
+
+            if (checkUsername != null)
+            {
+                return StatusCode(409);
+            }
+
             _context.Users.Add(userModel);
             await _context.SaveChangesAsync();
 

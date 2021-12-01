@@ -13,7 +13,6 @@ namespace AutoDagWaarde
         private readonly string kenteken;
         private brandstofType brandstof;
 
-
         public enum brandstofType
         {
             benzine = 100,
@@ -42,7 +41,7 @@ namespace AutoDagWaarde
         }
 
         //Methods
-        public void DriveKilometer(int driven)
+        public void RijdKilometers(int driven)
         {
             if (driven > 0)
             {
