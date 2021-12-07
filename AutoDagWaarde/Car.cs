@@ -41,11 +41,11 @@ namespace AutoDagWaarde
         }
 
         //Methods
-        public void RijdKilometers(int driven)
+        public void RijdKilometers(int gereden)
         {
-            if (driven > 0)
+            if (gereden > 0)
             {
-                kilometer += driven;
+                kilometer += gereden;
             }
         }
 
