@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DateReminder.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211202110011_Add authentication to API")]
-    partial class AddauthenticationtoAPI
+    [Migration("20211207073807_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,29 +62,11 @@ namespace DateReminder.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("DateReminder.Models.UserModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(767)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -95,8 +77,8 @@ namespace DateReminder.Migrations
                         .HasColumnType("varchar(256)");
 
                     b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.HasKey("Id");
 
@@ -111,6 +93,7 @@ namespace DateReminder.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasMaxLength(85)
                         .HasColumnType("int");
 
                     b.Property<string>("ClaimType")
@@ -121,7 +104,8 @@ namespace DateReminder.Migrations
 
                     b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("varchar(767)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.HasKey("Id");
 
@@ -133,7 +117,8 @@ namespace DateReminder.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(767)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -156,12 +141,12 @@ namespace DateReminder.Migrations
                         .HasColumnType("timestamp");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("text");
@@ -198,6 +183,7 @@ namespace DateReminder.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasMaxLength(85)
                         .HasColumnType("int");
 
                     b.Property<string>("ClaimType")
@@ -208,7 +194,8 @@ namespace DateReminder.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(767)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.HasKey("Id");
 
@@ -220,19 +207,20 @@ namespace DateReminder.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("text");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(767)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -244,10 +232,12 @@ namespace DateReminder.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("varchar(767)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<string>("RoleId")
-                        .HasColumnType("varchar(767)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -259,15 +249,16 @@ namespace DateReminder.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("varchar(767)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasMaxLength(85)
+                        .HasColumnType("varchar(85)");
 
                     b.Property<string>("Value")
                         .HasColumnType("text");

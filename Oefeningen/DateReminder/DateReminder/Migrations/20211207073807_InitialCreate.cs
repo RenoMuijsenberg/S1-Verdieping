@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace DateReminder.Migrations
 {
-    public partial class AddauthenticationtoAPI : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,9 +12,9 @@ namespace DateReminder.Migrations
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "varchar(255)", nullable: false),
+                    Id = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
                     Name = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true),
-                    NormalizedName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -26,11 +26,11 @@ namespace DateReminder.Migrations
                 name: "AspNetUsers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "varchar(255)", nullable: false),
+                    Id = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
                     UserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: true),
                     Email = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: true),
                     EmailConfirmed = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     PasswordHash = table.Column<string>(type: "text", nullable: true),
                     SecurityStamp = table.Column<string>(type: "text", nullable: true),
@@ -48,12 +48,42 @@ namespace DateReminder.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AspNetRoleClaims",
+                name: "Lists",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    RoleId = table.Column<string>(type: "varchar(255)", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    ListName = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lists", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    ListId = table.Column<int>(type: "int", nullable: false),
+                    ProductName = table.Column<string>(type: "text", nullable: false),
+                    ProductImage = table.Column<string>(type: "text", nullable: true),
+                    ProductDate = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetRoleClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", maxLength: 85, nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    RoleId = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
                     ClaimType = table.Column<string>(type: "text", nullable: true),
                     ClaimValue = table.Column<string>(type: "text", nullable: true)
                 },
@@ -72,9 +102,9 @@ namespace DateReminder.Migrations
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", maxLength: 85, nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<string>(type: "varchar(255)", nullable: false),
+                    UserId = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
                     ClaimType = table.Column<string>(type: "text", nullable: true),
                     ClaimValue = table.Column<string>(type: "text", nullable: true)
                 },
@@ -93,10 +123,10 @@ namespace DateReminder.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
+                    ProviderKey = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "text", nullable: true),
-                    UserId = table.Column<string>(type: "varchar(255)", nullable: false)
+                    UserId = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -113,8 +143,8 @@ namespace DateReminder.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "varchar(255)", nullable: false),
-                    RoleId = table.Column<string>(type: "varchar(255)", nullable: false)
+                    UserId = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
+                    RoleId = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -137,9 +167,9 @@ namespace DateReminder.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "varchar(255)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false),
+                    UserId = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
+                    LoginProvider = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
+                    Name = table.Column<string>(type: "varchar(85)", maxLength: 85, nullable: false),
                     Value = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -207,6 +237,12 @@ namespace DateReminder.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Lists");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
