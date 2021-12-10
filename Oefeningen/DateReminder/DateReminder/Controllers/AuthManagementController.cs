@@ -42,7 +42,7 @@ namespace DateReminder.Controllers
                     {
                         Errors = new List<string>()
                         {
-                        "Email already in use"
+                            "Email already in use"
                         },
                         Success = false
                     });
@@ -50,8 +50,8 @@ namespace DateReminder.Controllers
 
                 var newUser = new IdentityUser()
                 {
+                    UserName = user.Email,
                     Email = user.Email,
-                    UserName = user.UserName
                 };
                 var isCreated = await _userManager.CreateAsync(newUser, user.Password);
 
