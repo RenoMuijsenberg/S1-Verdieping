@@ -5,6 +5,11 @@
       "ProjectGuid": "f58a5395-ff1b-4c0a-9448-0062cf6858c0",
       "DisplayName": "DateReminder",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

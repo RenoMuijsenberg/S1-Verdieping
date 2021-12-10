@@ -61,6 +61,7 @@ namespace DateReminder.Controllers
 
                     return Ok(new RegistrationRepsonse()
                     {
+                        userId = newUser.Id,
                         Success = true,
                         Token = jwtToken
                     });
@@ -125,6 +126,7 @@ namespace DateReminder.Controllers
 
                     return Ok(new RegistrationRepsonse()
                     {
+                        userId = existingUser.Id,
                         Success = true,
                         Token = jwtToken
                     });
