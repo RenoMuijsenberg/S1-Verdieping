@@ -464,9 +464,9 @@ D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net
 D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\DateReminder.csproj.CoreCompileInputs.cache
 D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\DateReminder.MvcApplicationPartsAssemblyInfo.cs
 D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\DateReminder.MvcApplicationPartsAssemblyInfo.cache
+D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\scopedcss\bundle\DateReminder.styles.css
 D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\staticwebassets\DateReminder.StaticWebAssets.Manifest.cache
 D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\staticwebassets\DateReminder.StaticWebAssets.xml
-D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\scopedcss\bundle\DateReminder.styles.css
 D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\DateReminder.RazorTargetAssemblyInfo.cache
 D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\DateReminder.csproj.CopyComplete
 D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\obj\Debug\net5.0\DateReminder.dll

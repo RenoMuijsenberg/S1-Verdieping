@@ -9,7 +9,7 @@ namespace DateReminder.Models
         public int Id { get; set; }
         
         //Id of user
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         //Name of list
         [Required(ErrorMessage = "List name is required")]

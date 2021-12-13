@@ -103,7 +103,7 @@ namespace DateReminder.Controllers
 
         //Get: api/lists/{userid}
         [HttpGet("user/{userId}")]
-        public async Task<ActionResult<IEnumerable<ListModel>>> GetUserLists(int userId)
+        public async Task<ActionResult<IEnumerable<ListModel>>> GetUserLists(string userId)
         {
             var listModel = await _context.Lists.Where(x => x.UserId == userId).ToListAsync();
 
