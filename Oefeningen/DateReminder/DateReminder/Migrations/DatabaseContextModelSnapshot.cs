@@ -27,8 +27,8 @@ namespace DateReminder.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -44,9 +44,11 @@ namespace DateReminder.Migrations
                     b.Property<int>("ListId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ProductDate")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("ProductCategory")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ProductDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("ProductImage")
                         .HasColumnType("text");

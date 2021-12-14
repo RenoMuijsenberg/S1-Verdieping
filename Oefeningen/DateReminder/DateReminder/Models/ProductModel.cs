@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace DateReminder.Models
 {
@@ -20,6 +21,8 @@ namespace DateReminder.Models
 
         //Date of product
         [Required(ErrorMessage = "Product date is required")]
-        public string ProductDate { get; set; }
+        public DateTime ProductDate { get; set; }
+
+        public int ProductCategory { get; set; }
     }
 }
