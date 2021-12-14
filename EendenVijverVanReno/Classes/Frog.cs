@@ -6,26 +6,31 @@ using System.Threading.Tasks;
 
 namespace EendenVijverVanReno
 {
-    class Duck
+    class Frog
     {
         //Fields
+        private int frogId;
         private string name;
-        private duckGender sex;
-        public enum duckGender
+        private frogGender sex;
+        private static int nextFrogId = 0;
+        public enum frogGender
         {
             Male,
-            Female
+            Female,
+            Other
         }
 
         //Constructor
-        public Duck(string Name, duckGender Sex)
+        public Frog(frogGender Sex)
         {
-            name = Name;
+            frogId = nextFrogId;
+            name = "Frog " + frogId;
             sex = Sex;
+            nextFrogId++;
         }
 
         //Property
-        public duckGender Sex
+        public frogGender Sex
         {
             get { return sex; }
         }

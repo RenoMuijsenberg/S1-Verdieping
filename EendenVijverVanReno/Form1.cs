@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EendenVijverVanReno
@@ -15,9 +8,7 @@ namespace EendenVijverVanReno
         int timePassed = 0;
         int nextRandomAttack = 0;
         private Random rnd = new Random();
-        private List<Duck> ducks = new List<Duck>();
-        private List<Frog> frogs = new List<Frog>();
-        private List<Stork> storks = new List<Stork>();
+        Pond pond = new Pond();
 
         public Form1()
         {
@@ -33,13 +24,13 @@ namespace EendenVijverVanReno
                 int gender = rnd.Next(0, 2);
                 if (gender == 0)
                 {
-                    ducks.Add(new Duck("Duck " + i, Duck.duckGender.Male));
+                    pond.AddDuck("Duck " + i, Duck.duckGender.Male);
                 }
                 else
                 {
-                    ducks.Add(new Duck("Duck " + i, Duck.duckGender.Female));
+                    pond.AddDuck("Duck " + i, Duck.duckGender.Female);
                 }
-                ltbDucks.Items.Add(ducks[i].ToString());
+                ltbDucks.Items.Add(pond.Ducks[i].ToString());
             }
 
             for (int i = 0; i < 5; i++)
@@ -47,17 +38,17 @@ namespace EendenVijverVanReno
                 int gender = rnd.Next(0, 3);
                 if (gender == 0)
                 {
-                    storks.Add(new Stork(Stork.storkGender.Male));
+                    pond.AddStork(Stork.storkGender.Male);
                 }
                 else if (gender == 1)
                 {
-                    storks.Add(new Stork(Stork.storkGender.Female));
+                    pond.AddStork(Stork.storkGender.Female);
                 }
                 else
                 {
-                    storks.Add(new Stork(Stork.storkGender.Other));
+                    pond.AddStork(Stork.storkGender.Other);
                 }
-                ltbStorks.Items.Add(storks[i].ToString());
+                ltbStorks.Items.Add(pond.Storks[i].ToString());
             }
         }
 
@@ -65,7 +56,7 @@ namespace EendenVijverVanReno
         {
             if (ltbDucks.SelectedIndex != -1)
             {
-                MessageBox.Show(ducks[ltbDucks.SelectedIndex].Sex.ToString());
+                MessageBox.Show(pond.Ducks[ltbDucks.SelectedIndex].Sex.ToString());
             }
         }
 
@@ -75,15 +66,15 @@ namespace EendenVijverVanReno
 
             if (gender == 0)
             {
-                frogs.Add(new Frog(Frog.frogGender.Male));
+                pond.AddFrog(Frog.frogGender.Male);
             }
             else if (gender == 1)
             {
-                frogs.Add(new Frog(Frog.frogGender.Female));
+                pond.AddFrog(Frog.frogGender.Female);
             }
             else
             {
-                frogs.Add(new Frog(Frog.frogGender.Other));
+                pond.AddFrog(Frog.frogGender.Other);
             }
             UpdateFrogsListBox();
         }
@@ -94,21 +85,21 @@ namespace EendenVijverVanReno
             lblNextAttackSec.Text = (nextRandomAttack - timePassed).ToString();
             if (timePassed == nextRandomAttack)
             {
-                if (frogs.Count != 0)
+                if (pond.Frogs.Count != 0)
                 {
-                    int randomStork = rnd.Next(0, storks.Count -1);
-                    int randomFrog = rnd.Next(0, frogs.Count - 1);
+                    int randomStork = rnd.Next(0, pond.Storks.Count -1);
+                    int randomFrog = rnd.Next(0, pond.Frogs.Count - 1);
 
-                    if (storks[randomStork].Sex.ToString() == frogs[randomFrog].FrogGender.ToString())
+                    if (pond.Storks[randomStork].Sex.ToString() == pond.Frogs[randomFrog].Sex.ToString())
                     {
-                        storks[randomStork].AttackFrog(frogs[randomFrog]);
-                        MessageBox.Show(storks[randomStork].ToString() + "(" + storks[randomStork].Sex.ToString() + ") killed " + frogs[randomFrog] + "(" + frogs[randomFrog].FrogGender.ToString() + ")", "Success");
-                        frogs.Remove(frogs[randomFrog]);
+                        pond.Storks[randomStork].AttackFrog(pond.Frogs[randomFrog]);
+                        MessageBox.Show(pond.Storks[randomStork].ToString() + "(" + pond.Storks[randomStork].Sex.ToString() + ") killed " + pond.Frogs[randomFrog] + "(" + pond.Frogs[randomFrog].Sex.ToString() + ")", "Success");
+                        pond.Frogs.Remove(pond.Frogs[randomFrog]);
                         UpdateFrogsListBox();
                     }
                     else
                     {
-                        MessageBox.Show(storks[randomStork].ToString() + "(" + storks[randomStork].Sex.ToString() + ") wanted to attack " + frogs[randomFrog] + "(" + frogs[randomFrog].FrogGender.ToString() + ")" + "\n" + "But failed because of gender" , "Error");
+                        MessageBox.Show(pond.Storks[randomStork].ToString() + "(" + pond.Storks[randomStork].Sex.ToString() + ") wanted to attack " + pond.Frogs[randomFrog] + "(" + pond.Frogs[randomFrog].Sex.ToString() + ")" + "\n" + "But failed because of gender" , "Error");
                     }
                 }
                 else
@@ -122,7 +113,7 @@ namespace EendenVijverVanReno
         private void UpdateFrogsListBox()
         {
             ltbFrog.Items.Clear();
-            foreach (var frog in frogs)
+            foreach (var frog in pond.Frogs)
             {
                 ltbFrog.Items.Add(frog.ToString());
             }
@@ -133,9 +124,9 @@ namespace EendenVijverVanReno
             if (ltbStorks.SelectedIndex != -1)
             {
                 ltbKills.Items.Clear();
-                if (storks[ltbStorks.SelectedIndex].EatenFrogs.Count != 0)
+                if (pond.Storks[ltbStorks.SelectedIndex].EatenFrogs.Count != 0)
                 {
-                    foreach (var killedFrog in storks[ltbStorks.SelectedIndex].EatenFrogs)
+                    foreach (var killedFrog in pond.Storks[ltbStorks.SelectedIndex].EatenFrogs)
                     {
                         ltbKills.Items.Add(killedFrog.ToString());
                     }
