@@ -9,9 +9,16 @@ namespace EendenVijverVanReno
     class Pond
     {
         //Fields
-        private List<Duck> ducks = new List<Duck>();
-        private List<Frog> frogs = new List<Frog>();
-        private List<Stork> storks = new List<Stork>();
+        private readonly List<Duck> ducks = new List<Duck>();
+        private readonly List<Frog> frogs = new List<Frog>();
+        private readonly List<Stork> storks = new List<Stork>();
+
+        public enum Genders
+        {
+            Male,
+            Female,
+            Other
+        }
 
         //Property
         public List<Duck> Ducks
@@ -30,17 +37,17 @@ namespace EendenVijverVanReno
         }
 
         //Methods
-        public void AddDuck(string name, Duck.duckGender sex)
+        public void AddDuck(string name, Genders sex)
         {
             ducks.Add(new Duck(name, sex));
         }
 
-        public void AddFrog(Frog.frogGender sex)
+        public void AddFrog(Genders sex)
         {
             frogs.Add(new Frog(sex));
         }
 
-        public void AddStork(Stork.storkGender sex)
+        public void AddStork(Genders sex)
         {
             storks.Add(new Stork(sex));
         }

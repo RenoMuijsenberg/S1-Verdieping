@@ -11,6 +11,7 @@
     <WebStackScaffolding_DbContextTypeFullName>DateReminder.DatabaseContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <ActiveDebugProfile>DateReminder</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>D:\Fontys\Verdieping Software\Oefeningen\DateReminder\DateReminder\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

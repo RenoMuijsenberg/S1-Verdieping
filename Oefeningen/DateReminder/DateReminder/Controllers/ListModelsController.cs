@@ -7,6 +7,7 @@ using DateReminder.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Newtonsoft.Json;
 
 namespace DateReminder.Controllers
 {
@@ -90,9 +91,19 @@ namespace DateReminder.Controllers
         {
             var listModel = await _context.Lists.FindAsync(id);
 
+            var productsInList = await _context.Products.Where(x => x.ListId == id).ToListAsync();
+
             if (listModel == null)
             {
                 return NotFound();
+            }
+
+            if (productsInList.Any())
+            {
+                foreach (var product in productsInList)
+                {
+                    _context.Products.Remove(product);
+                }
             }
 
             _context.Lists.Remove(listModel);

@@ -42,6 +42,8 @@ namespace EendenVijverVanReno
             this.tmrAttack = new System.Windows.Forms.Timer(this.components);
             this.lblStorkKills = new System.Windows.Forms.Label();
             this.ltbKills = new System.Windows.Forms.ListBox();
+            this.lblGenderChangeTime = new System.Windows.Forms.Label();
+            this.lblGenderChange = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ltbDucks
@@ -147,11 +149,31 @@ namespace EendenVijverVanReno
             this.ltbKills.Size = new System.Drawing.Size(215, 381);
             this.ltbKills.TabIndex = 9;
             // 
+            // lblGenderChangeTime
+            // 
+            this.lblGenderChangeTime.AutoSize = true;
+            this.lblGenderChangeTime.Location = new System.Drawing.Point(318, 436);
+            this.lblGenderChangeTime.Name = "lblGenderChangeTime";
+            this.lblGenderChangeTime.Size = new System.Drawing.Size(16, 13);
+            this.lblGenderChangeTime.TabIndex = 12;
+            this.lblGenderChangeTime.Text = "...";
+            // 
+            // lblGenderChange
+            // 
+            this.lblGenderChange.AutoSize = true;
+            this.lblGenderChange.Location = new System.Drawing.Point(245, 436);
+            this.lblGenderChange.Name = "lblGenderChange";
+            this.lblGenderChange.Size = new System.Drawing.Size(71, 13);
+            this.lblGenderChange.TabIndex = 11;
+            this.lblGenderChange.Text = "Next change:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 450);
+            this.ClientSize = new System.Drawing.Size(954, 460);
+            this.Controls.Add(this.lblGenderChangeTime);
+            this.Controls.Add(this.lblGenderChange);
             this.Controls.Add(this.lblStorkKills);
             this.Controls.Add(this.ltbKills);
             this.Controls.Add(this.lblNextAttackSec);
@@ -185,6 +207,8 @@ namespace EendenVijverVanReno
         private System.Windows.Forms.Timer tmrAttack;
         private System.Windows.Forms.Label lblStorkKills;
         private System.Windows.Forms.ListBox ltbKills;
+        private System.Windows.Forms.Label lblGenderChangeTime;
+        private System.Windows.Forms.Label lblGenderChange;
     }
 }
 

@@ -3,27 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static EendenVijverVanReno.Pond;
 
 namespace EendenVijverVanReno
 {
     class Stork
     {
         //Fields
-        private int storkId;
-        private string name;
-        private storkGender sex;
+        private readonly int storkId;
+        private readonly string name;
+        private readonly Genders sex;
         private static int nextStorkId = 0;
-        private List<Frog> eatenFrogs = new List<Frog>();
+        private readonly List<Frog> eatenFrogs = new List<Frog>();
         
-        public enum storkGender
-        {
-            Male,
-            Female,
-            Other
-        }
-
         //Constructor
-        public Stork(storkGender Sex)
+        public Stork(Genders Sex)
         {
             storkId = nextStorkId;
             name = "Stork " + storkId;
@@ -32,7 +26,7 @@ namespace EendenVijverVanReno
         }
 
         //Propertys
-        public storkGender Sex
+        public Genders Sex
         {
             get { return sex; }
         }

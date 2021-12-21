@@ -7,8 +7,9 @@ namespace EendenVijverVanReno
     {
         int timePassed = 0;
         int nextRandomAttack = 0;
+        int nextGenderChange = 0;
         private Random rnd = new Random();
-        Pond pond = new Pond();
+        private readonly Pond pond = new Pond();
 
         public Form1()
         {
@@ -19,35 +20,23 @@ namespace EendenVijverVanReno
         {
             tmrAttack.Start();
             nextRandomAttack = rnd.Next(10, 25);
+            nextGenderChange = rnd.Next(10, 25);
+
             for (int i = 0; i < 26; i++)
             {
-                int gender = rnd.Next(0, 2);
-                if (gender == 0)
-                {
-                    pond.AddDuck("Duck " + i, Duck.duckGender.Male);
-                }
-                else
-                {
-                    pond.AddDuck("Duck " + i, Duck.duckGender.Female);
-                }
+                int newGender = rnd.Next(0, 2);
+
+                pond.AddDuck("Duck " + i, (Pond.Genders)newGender);
+
                 ltbDucks.Items.Add(pond.Ducks[i].ToString());
             }
 
             for (int i = 0; i < 5; i++)
             {
-                int gender = rnd.Next(0, 3);
-                if (gender == 0)
-                {
-                    pond.AddStork(Stork.storkGender.Male);
-                }
-                else if (gender == 1)
-                {
-                    pond.AddStork(Stork.storkGender.Female);
-                }
-                else
-                {
-                    pond.AddStork(Stork.storkGender.Other);
-                }
+                int newGender = rnd.Next(0, 3);
+
+                pond.AddStork((Pond.Genders)newGender);
+
                 ltbStorks.Items.Add(pond.Storks[i].ToString());
             }
         }
@@ -62,35 +51,31 @@ namespace EendenVijverVanReno
 
         private void btnFrog_Click(object sender, EventArgs e)
         {
-            int gender = rnd.Next(0, 3);
+            int newGender = rnd.Next(0, 3);
 
-            if (gender == 0)
-            {
-                pond.AddFrog(Frog.frogGender.Male);
-            }
-            else if (gender == 1)
-            {
-                pond.AddFrog(Frog.frogGender.Female);
-            }
-            else
-            {
-                pond.AddFrog(Frog.frogGender.Other);
-            }
+            pond.AddFrog((Pond.Genders)newGender);
+
             UpdateFrogsListBox();
         }
 
         private void tmrAttack_Tick(object sender, EventArgs e)
         {
             timePassed++;
+            StorkAttackFrog();
+            FrogChangeGender();
+        }
+
+        private void StorkAttackFrog()
+        {
             lblNextAttackSec.Text = (nextRandomAttack - timePassed).ToString();
             if (timePassed == nextRandomAttack)
             {
                 if (pond.Frogs.Count != 0)
                 {
-                    int randomStork = rnd.Next(0, pond.Storks.Count -1);
+                    int randomStork = rnd.Next(0, pond.Storks.Count - 1);
                     int randomFrog = rnd.Next(0, pond.Frogs.Count - 1);
 
-                    if (pond.Storks[randomStork].Sex.ToString() == pond.Frogs[randomFrog].Sex.ToString())
+                    if (pond.Storks[randomStork].Sex == pond.Frogs[randomFrog].Sex)
                     {
                         pond.Storks[randomStork].AttackFrog(pond.Frogs[randomFrog]);
                         MessageBox.Show(pond.Storks[randomStork].ToString() + "(" + pond.Storks[randomStork].Sex.ToString() + ") killed " + pond.Frogs[randomFrog] + "(" + pond.Frogs[randomFrog].Sex.ToString() + ")", "Success");
@@ -99,7 +84,7 @@ namespace EendenVijverVanReno
                     }
                     else
                     {
-                        MessageBox.Show(pond.Storks[randomStork].ToString() + "(" + pond.Storks[randomStork].Sex.ToString() + ") wanted to attack " + pond.Frogs[randomFrog] + "(" + pond.Frogs[randomFrog].Sex.ToString() + ")" + "\n" + "But failed because of gender" , "Error");
+                        MessageBox.Show(pond.Storks[randomStork].ToString() + "(" + pond.Storks[randomStork].Sex.ToString() + ") wanted to attack " + pond.Frogs[randomFrog] + "(" + pond.Frogs[randomFrog].Sex.ToString() + ")" + "\n" + "But failed because of gender", "Error");
                     }
                 }
                 else
@@ -107,6 +92,23 @@ namespace EendenVijverVanReno
                     MessageBox.Show("No frogs to attack", "Error");
                 }
                 nextRandomAttack += rnd.Next(10, 25);
+            }
+        }
+
+        private void FrogChangeGender()
+        {
+            lblGenderChangeTime.Text = (nextGenderChange - timePassed).ToString();
+            if (timePassed == nextGenderChange)
+            {
+                if (pond.Frogs.Count != 0)
+                {
+                    int randomFrog = rnd.Next(0, pond.Frogs.Count - 1);
+                    int newGender = rnd.Next(0, 3);
+
+                    pond.Frogs[randomFrog].Sex = (Pond.Genders)newGender;
+                    MessageBox.Show(pond.Frogs[randomFrog].ToString() + " changed to " + (Pond.Genders)newGender, "Success");
+                }
+                nextGenderChange += rnd.Next(10, 25);
             }
         }
 

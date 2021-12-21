@@ -3,30 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static EendenVijverVanReno.Pond;
 
 namespace EendenVijverVanReno
 {
     class Duck
     {
         //Fields
-        private string name;
-        private duckGender sex;
-
-        public enum duckGender
-        {
-            Male,
-            Female
-        }
+        private readonly string name;
+        private readonly Genders sex;
 
         //Constructor
-        public Duck(string Name, duckGender Sex)
+        public Duck(string Name, Genders Sex)
         {
             name = Name;
             sex = Sex;
         }
 
         //Property
-        public duckGender Sex
+        public Genders Sex
         {
             get { return sex; }
         }

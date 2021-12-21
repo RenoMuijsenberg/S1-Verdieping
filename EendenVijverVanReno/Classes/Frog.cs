@@ -3,25 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static EendenVijverVanReno.Pond;
 
 namespace EendenVijverVanReno
 {
     class Frog
     {
         //Fields
-        private int frogId;
-        private string name;
-        private frogGender sex;
+        private readonly int frogId;
+        private readonly string name;
+        private Genders sex;
         private static int nextFrogId = 0;
-        public enum frogGender
-        {
-            Male,
-            Female,
-            Other
-        }
 
         //Constructor
-        public Frog(frogGender Sex)
+        public Frog(Genders Sex)
         {
             frogId = nextFrogId;
             name = "Frog " + frogId;
@@ -30,9 +25,10 @@ namespace EendenVijverVanReno
         }
 
         //Property
-        public frogGender Sex
+        public Genders Sex
         {
             get { return sex; }
+            set { sex = value; }
         }
 
         public override string ToString()
